@@ -3,13 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Message Viewer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 40px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .yes {
+            background-color: green;
+            color: white;
+        }
+        .no {
+            background-color: red;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <div id="message-box"></div>
-    <input type="text" id="message-input" placeholder="Type your message...">
-    <button id="send-btn">Send</button>
-    <script src="script.js"></script>
+    <h1 id="question">Will You Be My Valentine?</h1>
+    <div class="buttons" id="buttons">
+        <button class="yes" id="yes">Yes</button>
+        <button class="no" id="no">No</button>
+    </div>
+    <script>
+        let yesButton = document.getElementById('yes');
+        let noButton = document.getElementById('no');
+        let size = 20;
+        
+        noButton.addEventListener('click', function() {
+            size += 10;
+            yesButton.style.fontSize = size + 'px';
+            yesButton.style.padding = (size / 2) + 'px ' + size + 'px';
+        });
+        
+        yesButton.addEventListener('click', function() {
+            document.body.innerHTML = `
+                <h1>Qixia, my GORGEOUS filipino minon </h1>
+                <p>Qixia, you are the most beautiful woman ever alive.</p>
+                <p>Your smile is absolutely stunning and brightens my day.</p>
+                <p>You are so nice and caring, and I love how freaky you get with me.</p>
+                <p>I love you so much, more than words can describe.</p>
+                <p>You are so funny, and I care for you like I have never cared for anyone else.</p>
+                <p>At 5'2" and 100 pounds, you are my perfect little angel.</p>
+                <p>You are the most gorgeous woman ever, and I am so lucky to have you in my life. THANK U FOR BEING VALENTINE I LOVE U BRO!! im not sure how, or in what way but ur awesome and i like that. other than that my brain doesbt know</p>
+                <img src="pic.png" alt="A lovely picture" style="margin-top: 20px; width: 300px; height: auto; border-radius: 10px;">
+            `;
+        });
+    </script>
 </body>
 </html>
